@@ -19,12 +19,25 @@
       margin: auto;
       padding: 20px;
     }
-
+    .logo{
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+    }
     header {
+      background-color: #0F172A;
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-top: 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header img {
+      max-width: 40px;
+      max-height: 40px;
     }
 
     header h1 
@@ -97,6 +110,7 @@
     }
 
     .hero {
+      background-color: #0F172A;
       text-align: center;
       padding: 100px 20px;
     }
@@ -162,6 +176,95 @@
 
     .card h3 { margin-bottom: 10px; }
 
+    /* CONTATO NOVO */
+.contato-container {
+  margin-top: 80px;
+}
+
+.contato-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+/* CARDS */
+.contato-form,
+.contato-info {
+  background: var(--card);
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(124, 58, 237, 0.4);
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.15);
+}
+
+/* FORM */
+.contato-form h2 {
+  margin-bottom: 20px;
+}
+
+.contato-form label {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+.contato-form input,
+.contato-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0 15px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background: transparent;
+  color: var(--text);
+  outline: none;
+  transition: 0.3s;
+}
+
+/* efeito neon */
+.contato-form input:focus,
+.contato-form textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 10px var(--primary);
+}
+
+.contato-form textarea {
+  height: 120px;
+  resize: none;
+}
+
+/* BOTÃO */
+.contato-form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #7C3AED, #a855f7);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contato-form button:hover {
+  opacity: 0.85;
+}
+
+/* TEXTO LATERAL */
+.contato-info p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.contato-info ul {
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.contato-info li {
+  margin-bottom: 8px;
+}
+
     .socials {
       display: flex;
       gap: 15px;
@@ -181,9 +284,38 @@
     }
 
     footer {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+      background-color: #1E293B;
       text-align: center;
       padding: 20px;
       opacity: 0.6;
+    }
+    .navfooter{
+      display: flex; 
+      flex-direction: row; 
+      gap: 50px;
+      align-items: center;
+    }
+    .navfooter a {
+      text-decoration: none;
+      color: #38BDF8;
+    }
+
+    .navfooter a:hover{
+      text-decoration: underline;
+    }
+
+    .socialfooter a {
+      color: #7C3AED;
+      font-size: 1.5em;
+    }
+
+    footer p{
+      color: #4d6ca1;
+      font-size: 1em;
     }
 
 
@@ -191,9 +323,14 @@
   @media(min-width: 768px) { 
     .fa-solid.fa-bars {
     display: none;
-    border: none;
-    font-size: 2em;
-    cursor: pointer;
+    }
+
+    #menu {
+      position: static;
+      display: flex;
+      flex-direction: row;
+      background: none;
+      padding: 0;
     }
 
     .hh{
@@ -218,6 +355,10 @@
     .projects {
       grid-template-columns: repeat(3, 1fr);
     }
+
+    .contato-grid {
+    grid-template-columns: 1fr 1fr;
+  }
   }
 
  

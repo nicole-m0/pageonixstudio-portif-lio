@@ -8,18 +8,23 @@
   <script src="https://kit.fontawesome.com/68415d66c2.js" crossorigin="anonymous"></script>
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="img/POlogoimg.png" type="image/png">
 </head>
 <body>
 
 <div class="container">
 
   <header>
-    <h1>Pageonix</h1>
+    <div class="logo">
+      <img src="img/POlogoimg.png" alt="pageonix logo">
+      <h1>Pageonix</h1>
+    </div>
+
     <i class="fa-solid fa-bars" id="menu-btn" ></i>
     <nav id="menu">
-      <a href="#sobre">Sobre</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#contato">Contato</a>
+      <a href="#sobre" class="link">Sobre <i class="fa-regular fa-handshake"></i></a>
+      <a href="#projetos" class="link">Projetos <i class="fa-solid fa-helmet-safety"></i></a>
+      <a href="#contato" class="link">Contato <i class="fa-solid fa-phone"></i></a>
     </nav>
   </header>
 
@@ -40,7 +45,7 @@
     </div>
 
   <section id="sobre">
-    <h2>Sobre</h2>
+    <h2>Sobre <i class="fa-regular fa-handshake"></i></h2>
     <p>
       Desenvolvo sites modernos, rápidos e responsivos para empresas, negócios locais e profissionais autônomos.
       Meu objetivo é ajudar você a criar uma identidade visual forte na internet, transformando sua marca
@@ -58,7 +63,7 @@
   </section>
 
   <section id="projetos">
-    <h2>Projetos</h2>
+    <h2>Projetos <i class="fa-solid fa-helmet-safety"></i></h2>
     <div class="projects">
 
       <div class="card">
@@ -112,31 +117,102 @@
     </div>
   </section>
 
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>
-      Quer um site profissional que represente de verdade o seu negócio?
-      Vamos conversar e tirar sua ideia do papel.
-    </p>
+  <section id="contato" class="contato-container">
+    <h2>Contato <i class="fa-solid fa-phone"></i></h2>
+  <div class="contato-grid">
 
-    <div class="socials">
-      <a href="#"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://www.youtube.com/@PageonixStudio-of"><i class="fa-brands fa-youtube"></i></a>
-      <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-      <a href="https://wa.me/5589994549682"><i class="fa-brands fa-whatsapp"></i></a>
+    <!-- FORMULÁRIO -->
+    <div class="contato-form">
+      <h2>Me envie uma mensagem</h2>
+
+      <form id="form-contato">
+        <label>Nome</label>
+        <input type="text" name="name" placeholder="Seu nome">
+
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Seu email">
+
+        <label>Mensagem</label>
+        <textarea placeholder="Sua mensagem" name="message"></textarea>
+
+        <button type="submit">Enviar Mensagem</button>
+      </form>
     </div>
 
-    <br>
-    <a href="#" class="btn">Falar comigo</a>
-  </section>
+    <!-- TEXTO LATERAL -->
+    <div class="contato-info">
+      <p>
+        Na <strong>Pageonix Studio</strong>, desenvolvemos páginas profissionais que vão além da estética.
+        Criamos experiências digitais estratégicas que fortalecem a identidade visual da sua empresa,
+        aumentam sua presença online e geram resultados reais.
+      </p>
+
+      <ul>
+        <li>Desenvolvimento Web & Mobile</li>
+        <li>Design Profissional</li>
+        <li>Identidade Visual</li>
+        <li>Consultoria Técnica</li>
+      </ul>
+
+      <div class="socials">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@PageonixStudio-of"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://wa.me/5589994549682"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="mailto:nicolemendes.dev@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 </div>
 
 <footer>
+  <h1>Pageonix</h1>
+
+  <div class="navfooter">
+    <a href="#sobre" class="link">Sobre</a>
+    <a href="#projetos" class="link">Projetos</a>
+    <a href="#contato" class="link">Contato</a>
+  </div>
+
+  <div class="socialfooter">
+    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@PageonixStudio-of"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://wa.me/5589994549682"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="mailto:nicolemendes.dev@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+  </div>
+
   <p>© 2026 Pageonix Studio</p>
 </footer>
 
 <script src="script.js"></script>
+
+<!-- seu conteúdo do site -->
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  (function(){
+    emailjs.init("I9dTuzMnIqoSc_4MA");
+  })();
+</script>
+
+<script>
+document.getElementById("form-contato").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  emailjs.sendForm("service_x5bnfhs", "template_ekgykdl", this)
+    .then(() => {
+      alert("Mensagem enviada com sucesso!");
+    }, (error) => {
+      alert("Erro ao enviar.");
+      console.log(error);
+    });
+});
+</script>
 
 </body>
 </html>
