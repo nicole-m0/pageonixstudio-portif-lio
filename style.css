@@ -27,7 +27,35 @@
       margin-top: 40px;
     }
 
-    header h1 { color: var(--accent); }
+    header h1 
+    { color: var(--accent); }
+
+    .fa-solid.fa-bars {
+        display: block;
+        margin-left: 10px;
+    }
+
+    #menu {
+      position: absolute;
+      top: 80px;
+      right: 20px;
+      background: var(--card);
+      padding: 15px;
+      border-radius: 10px;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+}
+
+    #menu-btn {
+      font-size: 1.8em;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    #menu.active {
+      display: flex;
+}
 
     nav a {
       margin-left: 20px;
@@ -36,7 +64,8 @@
       transition: 0.3s;
     }
 
-    nav a:hover { color: var(--accent); }
+    nav a:hover 
+    { color: var(--accent); }
 
     .hh{
       display: flex;
@@ -126,6 +155,11 @@
       transform: translateY(-8px);
     }
 
+    .card a{
+      text-decoration: none;
+      color: aliceblue;
+    }
+
     .card h3 { margin-bottom: 10px; }
 
     .socials {
@@ -138,7 +172,12 @@
     .socials a {
       text-decoration: none;
       color: var(--accent);
-      font-size: 14px;
+      font-size: 1.5em;
+      transition: transform .2s ease-in-out;
+    }
+
+    .socials a:hover {
+      transform: scale(1.15);
     }
 
     footer {
@@ -150,6 +189,13 @@
 
   /* DESKTOP */ 
   @media(min-width: 768px) { 
+    .fa-solid.fa-bars {
+    display: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    }
+
     .hh{
       display: flex;
       flex-direction: row;
@@ -168,4 +214,10 @@
     .imghero {
       gap: 0px;
     }
+
+    .projects {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
+
+ 
